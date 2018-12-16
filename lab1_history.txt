@@ -1,0 +1,234 @@
+   60  whoami
+   61  whoaim
+   62  whoami
+   63  echo "Hello World"
+   64  date
+   65  cal
+   66  man cal
+   67  cal -3
+   68  history
+   69  pwd
+   70  cd /
+   71  cd ..
+   72  pwd
+   73  ls
+   74  ls /var
+   75  cd ~
+   76  cd
+   77  cd ..
+   78  pwd
+   79  ls
+   80  cd 
+   81  ls -l
+   82  man ls
+   83  cd 
+   84  mkdir fruits
+   85  cd /
+   86  mkdir ~/animals
+   87  touch /tmp/temp
+   88  cd
+   89  cd fruits
+   90  touch apple
+   91  touch banana
+   92  touch pine aple
+   93  ls
+   94  rm pine
+   95  rm aple
+   96  touch pineaple
+   97  ls
+   98  touch lion
+   99  touch ~/animals/cat.txt
+  100  touch ~/animals/dog.txt
+  101  touch ~/animals/elephant.txt
+  102  ls -l
+  103  ls b*
+  104  ls w*a
+  105  ls [a-zA-Z]*a
+  106  ls [bi]*
+  107  ls b* i*
+  108  cp /etc/passwd ~
+  109  cat /etc/issue
+  110  man cp
+  111  cp
+  112  cp -rf /etc/issue apple
+  113  ls
+  114  cat apple
+  115  mv lion ../animals
+  116  mv pineaple pineapple
+  117  ls
+  118  man wc
+  119  wc -l /etc/passwd
+  120  cd 
+  121  ln -s /etc/passwd passwd_link
+  122  ln .bash_history history_hard
+  123  ls -l
+  124  ls -l ~/.bash_history
+  125  rm fruits/apple
+  126  mkdir rmme
+  127  rmdir rmme
+  128  rmdir fruits
+  129  rm -fr fruits
+  130  man cat
+  131  cat /etc/passwd /var/log/boot.log
+  132  cp /etc/init.d/ ~
+  133  ls
+  134  cp -r /etc/init.d/ ~
+  135  ls
+  136  rm -fr init.d
+  137  man cut
+  138  man sort
+  139  cut -d: -f1 /etc/passwd | sort
+  140  cat /etc/passwd
+  141  man column
+  142  cut -d: -f1,3,4 /etc/passwd |column -ts: | less
+  143  cut -d: -f1,3 /etc/passwd |column -ts: | less
+  144  grep :?bin?bash ?etc?passwd |wc -l
+  145  grep :/bin/bash /etc/passwd |wc -l
+  146  man grep
+  147  man sor
+  148  grep :/bin/bash /etc/passwd | sort -r | less
+  149  grep :/bin/bash /etc/passwd | sort -r | echo
+  150  grep :/bin/bash /etc/passwd | sort -r | cat
+  151  man rpm
+  152  man xargs
+  153  man du
+  154  man man
+  155  man-db
+  156  man -db
+  157  mansort
+  158  man sort
+  159  rpm -qa --qf '%{NAME}: %{SIZE}\n' | head -n25
+  160  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k 2,2 | head -n25
+  161  rpm -ql man-db | xargs -l du 2> /dev/null |sort -n
+  162  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k 1,2 | head -n25
+  163  man top
+  164  top -b -n1 | sort
+  165  top -b -n1 | sort -k12,12
+  166  top -b -n1
+  167  man sort
+  168  top -n1
+  169  man tail
+  170  top -b -n1 | sort -k12,12
+  171  top -b -n1
+  172  top -b -n1 | tail -n+8 
+  173  man cut
+  174  top -b -n1 | tail -n+8 | cut -c7-
+  175  man tr
+  176  top -b -n1 | tail -n+8 | cut -c7- | tr -s ' ' '\t'
+  177  top -b -n1 | tail -n+8 | cut -c7- | tr -s ' ' '\t' | cut -f11,5
+  178  cat /etc/passwd
+  179  man sort
+  180  cat /etc/passwd | sort -t=: -k1,1
+  181  cat /etc/passwd | sort -t: -k1,1
+  182  cat /etc/passwd | sort  -k1,1 |
+  183  man sort
+  184  cat /etc/passwd | sort -t: -k1,1
+  185  cat /etc/passwd | sort -k1,1
+  186  cat /etc/passwd | sort -t: -k1,1 | tr ":" " "
+  187  cat /etc/passwd | sort -t: -k1,1 | tr ":" " " | cut -f1,4
+  188  cat /etc/passwd | sort -t: -k1,1 | tr ":" " " | cut -d=" " -f1,4
+  189  cat /etc/passwd | sort -t: -k1,1 | tr ":" " " | cut -d" " -f1,4
+  190  yum install -y git
+  191  su
+  192  cd /usr/share/doc/git -*
+  193  cd /usr/share/doc/git-*
+  194  cat user-manual.txt
+  195  less user-manual.txt
+  196  cat user-manual.txt | tr ' ' '\012' 
+  197  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' 
+  198  man tr
+  199  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' 
+  200  man grep
+  201  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]'
+  202  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep  '[a-z]'
+  203  man grep
+  204  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -e '[a-z]'
+  205  man grep
+  206  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -w '[a-z]'
+  207  man grep
+  208  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -w '[a-z]*'
+  209  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]'
+  210  man grep
+  211  man uniq
+  212  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]' | sort | uniq -c
+  213  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]' | sort | uniq -c | sort -rn | head -5
+  214  man tr
+  215  cat user-manual.txt | tr -cs '[:alpha:]' '\n'
+  216  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -w '[a-z]'
+  217  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]*'
+  218  man grep
+  219  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -wo '[a-z]*'
+  220  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]'
+  221  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -wo '[a-z]*'
+  222  cat user-manual.txt | tr -cs '[:alpha:]' '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn |head -5 
+  223  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]' | sort | uniq -c | sort -rn | head -5
+  224  tr '[:upper:]' '[:lower:]' < user-manual.txt | tr -d '[:punct:] \n\t' | fold -w1
+  225  man fold
+  226  tr '[:upper:]' '[:lower:]' < user-manual.txt | tr -d '[:punct:] \n\t' | fold -c
+  227  man fold
+  228  tr '[:upper:]' '[:lower:]' < user-manual.txt | tr -d '[:punct:] \n\t' | fold -w1 | sort | uni
+  229  man grep
+  230  tr -cs '[:alpha:]' '\n' < user-manual.txt |less | grep -E ........ | sort | uniq -c | sort -rn | head
+  231  man uniq
+  232  man less
+  233  tr -cs '[:alpha:]' '\n' < user-manual.txt | less | grep -E ........
+  234  tr -cs '[:alpha:]' '\n' < user-manual.txt | grep -E ........ | sort | uniq -c | sort -rn | head
+  235  tr -cs '[:alpha:]' '\n' < user-manual.txt |less | grep -E ........ | sort | uniq -c | sort -rn | head
+  236  tr -cs '[:alpha:]' '\n' < user-manual.txt |less 
+  237  ping ya.ru
+  238  man ping
+  239  man curl
+  240  curl wttr.in
+  241  curl google.com
+  242  hostname -I
+  243  curl ifconfig.me
+  244  wget https://raw.githubusercontent.com/jlevy/the.com/jlevy/the-art-of-command-line/master/README-ru.md
+  245  wget https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README-ru.md
+  246  ls
+  247  less README
+  248  cut
+  249  man ls
+  250  ls -t
+  251  wget https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README-ru.md
+  252  su
+  253  ls -lh
+  254  man usermod
+  255  id
+  256  su
+  257  id
+  258  sudo id
+  259  su
+  260  id
+  261  sudo id
+  262  root
+  263  user root
+  264  su root
+  265  sudo id
+  266  whoami
+  267  less /var/log/messages 
+  268  su
+  269  less /var/log/messages 
+  270  exit
+  271  less /var/log/messages 
+  272  id
+  273  sudo id
+  274  less /var/log/messages 
+  275  sudo less /var/log/messages 
+  276  exit
+  277  mkdir data-25
+  278  cp /etc/passwd data-25
+  279  ls -ld /data-25/
+  280  cd data-25
+  281  ls -ld . data-25/
+  282  ls -ld . data-25
+  283  ls -ld .
+  284  ls -ld . data-25/
+  285  cd..
+  286  cd ..
+  287  ls -ld . data-25/
+  288  cp /etc/passwd data-25
+  289  ls -ld . data-25/
+  290  sudo id
+  291  sudo less /var/log/messages
+  292  cat /var/log/messages
+  293  history > lab1_history.txt
